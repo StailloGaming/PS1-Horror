@@ -29,10 +29,15 @@ public class PlayerMovement : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
+
+
         //move horizontal & vertical
-        Vector3 move = transform.right * horizontalInput + transform.forward * verticalInput;
+        Vector3 move = Camera.main.transform.right * horizontalInput + Camera.main.transform.forward * verticalInput;
+        move = new Vector3 (move.x, -9.5f, move.z);
 
         //mouse movement
         charController.Move(move * speed * Time.deltaTime);
+
+        transform.rotation = Quaternion.Euler(new Vector3(Camera.main.transform.rotation.eulerAngles.x, Camera.main.transform.rotation.eulerAngles.y, Camera.main.transform.rotation.eulerAngles.z));
     }
 }

@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 1776452562910377527}
   - component: {fileID: 1776452562910377530}
   - component: {fileID: 1776452562910377531}
+  - component: {fileID: 8358019558195566292}
+  - component: {fileID: 3950759683863096301}
   m_Layer: 0
   m_Name: Gravestone
   m_TagString: Untagged
@@ -34,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
 --- !u!33 &2918993201733896631
 MeshFilter:
@@ -94,9 +96,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1469954550585515176}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 0.037087023, y: 0.00647158, z: 0.061110046}
   m_Center: {x: -0.000000030287925, y: -0.00000003645068, z: 0.02055502}
 --- !u!65 &1776452562910377530
@@ -107,9 +117,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1469954550585515176}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
   m_Size: {x: 0.0967406, y: 0.06856108, z: 0.061110053}
   m_Center: {x: 0.0027845064, y: -0.0001276447, z: 0.020555018}
 --- !u!114 &1776452562910377531
@@ -119,7 +137,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1469954550585515176}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94acf89b2ebe35d42ad8e75520c2520f, type: 3}
   m_Name: 
@@ -127,3 +145,38 @@ MonoBehaviour:
   ghost: {fileID: 5781374796455284023, guid: d84aed6c848e4344e985dba46f65ce1f, type: 3}
   gem: {fileID: 7362677123271498264, guid: d4c079e9e45170148872a25f9e8461ff, type: 3}
   isNear: 0
+--- !u!114 &8358019558195566292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469954550585515176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
+--- !u!114 &3950759683863096301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469954550585515176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0c947b7aabff43438b873ba5215c56e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemies:
+  - {fileID: 5781374796455284023, guid: d84aed6c848e4344e985dba46f65ce1f, type: 3}
+  - {fileID: 4088222842551016670, guid: f9a3ba1f0eb7d204a9c2a72767f7c0e6, type: 3}
+  RandomSpawnTime: {x: 10, y: 15}

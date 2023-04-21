@@ -6,12 +6,14 @@ public class PickUpScythe : MonoBehaviour
 {
     //variables
     private GameObject player;
+    private IDamager damager;
     [SerializeField] private bool isNear = false;
 
     private void Awake()
     {
         //finds player
         player = FindObjectOfType<PlayerMovement>().gameObject;
+        damager = GetComponent<IDamager>();
     }
 
     // Update is called once per frame
@@ -27,8 +29,8 @@ public class PickUpScythe : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            //scythe's parent is player's position
-            gameObject.transform.parent = player.transform;
+            player.GetComponent<Player>().EnableMeleeWeapon();
+            gameObject.SetActive(false);
         }
     }
 
