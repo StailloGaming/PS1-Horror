@@ -13,10 +13,19 @@ public class Player : MonoBehaviour
 	public GameObject WinScreen;
 	public GameObject LoseScreen;
 
+	public DetermineGameStart gameStatus;
+
+
 	private void Start() {
-		Cursor.lockState = CursorLockMode.Confined;
-		Cursor.visible = false;
-		AddGem();
+
+		gameStatus.gameStart = false;
+
+		if (gameStatus.gameStart == true)
+        {
+			Cursor.lockState = CursorLockMode.Confined;
+			Cursor.visible = false;
+			AddGem();
+		}
 	}
 
 	public void EnableMeleeWeapon() {
@@ -27,11 +36,13 @@ public class Player : MonoBehaviour
 	public void Win() {
 		WinScreen.SetActive(true);
 		Time.timeScale = 0;
+		gameStatus.GameHasEnded();
 	}
 
 	public void Lose() {
 		LoseScreen.SetActive(true);
 		Time.timeScale = 0;
+		gameStatus.GameHasEnded();
 	}
 
 	private void Update() {

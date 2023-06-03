@@ -7,12 +7,18 @@ public class Enemy : MonoBehaviour
 {
 	private NavMeshAgent navMeshAgent;
 	private GameObject player;
+	public DetermineGameStart gameStatus;
+	public bool canAttack;
+
 	private void Awake() {
+
 		navMeshAgent = GetComponent<NavMeshAgent>();
 		Player _player = FindFirstObjectByType<Player>();
 		if (_player) player = _player.gameObject;
 	}
-	private void OnEnable() {
+
+    private void OnEnable() {
+		
 		InvokeRepeating("AttackPlayer", 0f, .3f);
 	}
 
